@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration status="error">
 	<Properties>
-		<Property name="log_dir">D:/logs/plm-util</Property>
+		<Property name="log_dir">D:/logs/base</Property>
 		<Property name="log_text">%d{yyyy-MM-dd 'at' HH:mm:ss SSS} [%-5level] %class{36} (%M) :%L -> %msg%xEx%n</Property>
 	</Properties>
 	<appenders>
