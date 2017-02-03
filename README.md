@@ -34,4 +34,6 @@
 7. MVC框架：springMVC<p>
 
 ### 创建项目命令：
+
 mvn archetype:generate -DarchetypeRepository=local -DarchetypeGroupId=person.liuxx.archetypes -DarchetypeArtifactId=base-web -DarchetypeVersion=1.0.0 -DgroupId=person.liuxx -DartifactId=project -Dversion=1.0.0-SNAPSHOT -Dpackage=person.liuxx.project
+---
