@@ -35,11 +35,11 @@
 	<!-- 错误页面配置 -->
 	<error-page>
 		<error-code>404</error-code>
-		<location>/PageNotFound.html</location>
+		<location>/page_not_found.html</location>
 	</error-page>
 	<error-page>
 		<error-code>500</error-code>
-		<location>/PageError.html</location>
+		<location>/page_error.html</location>
 	</error-page>
 	<!--End 错误页面配置 -->
 
