@@ -6,7 +6,7 @@
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:cache="http://www.springframework.org/schema/cache"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/aop
 		http://www.springframework.org/schema/aop/spring-aop.xsd
@@ -39,7 +39,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<!-- 以下用来列出Hibernate的持久化类 -->
-				<!-- <value>person.liuxx.plm.util.vo.BOMItem</value> -->
+				<value>${package}.vo.Item</value>
 			</list>
 		</property>
 		<!-- 定义Hibernate的SessionFactory的属性 -->

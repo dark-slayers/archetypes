@@ -1,6 +1,10 @@
 package ${package}.dao.impl;
-
-public class DaoImpl
+@Repository("dao")
+public class DaoHibernate extends BaseDaoHibernate5<Item> implements Dao
 {
-	
+	@Autowired
+	private DaoHibernate(SessionFactory sessionFactory)
+	{
+		setSessionFactory(sessionFactory);
+	}
 }

@@ -1,6 +1,6 @@
 package ${package}.dao;
 
-public class Dao
+public class Dao extends BaseDao<Item>
 {
-	
+
 }
