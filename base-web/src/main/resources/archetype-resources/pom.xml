@@ -22,7 +22,7 @@
 			<id>development</id>
 			<properties>
 				<profiles.active>development</profiles.active>
-				<log_level_console_show>"TRACE"</log_level_console_show>
+				<log_level_console_show>"DEBUG"</log_level_console_show>
 				<hibernate.sql_url>jdbc:mysql://localhost:3306/${artifactId}</hibernate.sql_url>
 				<hibernate.password>liuxx123</hibernate.password>
 				<hibernate.show_sql>true</hibernate.show_sql>
