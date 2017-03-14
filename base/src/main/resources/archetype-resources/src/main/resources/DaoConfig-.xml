@@ -6,7 +6,7 @@
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:cache="http://www.springframework.org/schema/cache"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/aop
 		http://www.springframework.org/schema/aop/spring-aop.xsd
@@ -39,9 +39,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<!-- 以下用来列出Hibernate的持久化类 -->
-				<value>person.liuxx.plm.util.vo.BOMItem</value>
-				<value>person.liuxx.plm.util.vo.ItemCompare</value>	
-				<value>person.liuxx.plm.util.vo.CompareItem</value>			
+				<value>${package}.vo.Item</value>
 			</list>
 		</property>
 		<!-- 定义Hibernate的SessionFactory的属性 -->
@@ -61,10 +59,6 @@
 		id="daoTemplate"
 		abstract="true"
 		p:sessionFactory-ref="sessionFactory" />
-	<bean
-		id="bomItemDao"
-		class="person.liuxx.plm.util.dao.impl.BOMItemDaoHibernate"
-		parent="daoTemplate" />
 	<!-- 配置Hibernate的局部事务管理器，使用HibernateTransactionManager类 并注入SessionFactory的引用 -->
 	<bean
 		id="transactionManager"
@@ -82,20 +76,20 @@
 	<aop:config>
 		<!-- 配置一个切入点，所有方法的执行 -->
 		<aop:pointcut
-			id="larkPointcut"
-			expression="execution(* person.liuxx.plm.util.service..*(..))" />
+			id="hibernatePointcut"
+			expression="execution(* ${package}.service..*(..))" />
 		<!-- 指定在leePointcut切入点应用txAdvice事务增强处理 -->
 		<aop:advisor
 			advice-ref="txAdvice"
-			pointcut-ref="larkPointcut" />
+			pointcut-ref="hibernatePointcut" />
 	</aop:config>
 	<!-- 添加服务 -->
-	<bean
-		id="testService"
-		class="person.liuxx.plm.util.service.TestService"
-		p:bomItemDao-ref="bomItemDao"
-		scope="prototype" />
+	<!-- <bean -->
+	<!-- id="testService" -->
+	<!-- class="person.liuxx.plm.util.service.TestService" -->
+	<!-- p:bomItemDao-ref="bomItemDao" -->
+	<!-- scope="prototype" /> -->
 	<context:annotation-config />
-	<context:component-scan base-package="person.liuxx.plm.util.dao.impl" />
-	<context:component-scan base-package="person.liuxx.plm.util.service" />
+	<context:component-scan base-package="${package}.dao.impl" />
+	<context:component-scan base-package="${package}.service" />
 </beans>

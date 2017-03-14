@@ -3,7 +3,8 @@
 1. 创建项目
 2. 将项目转为eclipse项目  mvn eclipse:eclipse
 3. 将项目文件复制到GIT文件夹，导入eclipse,然后转为maven项目
-4. 修改配置文件名称
+4. 构建路径->配置构建路径，移除非MAVEN依赖包
+5. 修改配置文件名称
 
 ---
 ## base
@@ -19,7 +20,16 @@
 
 
 ### 创建项目命令：
- mvn archetype:generate -DarchetypeRepository=local -DarchetypeGroupId=person.liuxx.archetypes -DarchetypeArtifactId=base -DarchetypeVersion=1.0.0 -DgroupId=person.liuxx -DartifactId=project
+ mvn archetype:generate -DarchetypeRepository=local -DarchetypeGroupId=person.liuxx.archetypes -DarchetypeArtifactId=base -DarchetypeVersion=1.0.0 -DgroupId=person.liuxx -DartifactId=project -Dversion=1.0.0-SNAPSHOT -Dpackage=person.liuxx.project
+---
+## empty
+空白JAVA项目，JDK使用1.8版本<br>
+引入框架依赖：
+
+1. 基本框架：junit4
+
+### 创建项目命令：
+ mvn archetype:generate -DarchetypeRepository=local -DarchetypeGroupId=person.liuxx.archetypes -DarchetypeArtifactId=empty -DarchetypeVersion=1.0.0 -DgroupId=person.liuxx -DartifactId=project -Dversion=1.0.0-SNAPSHOT -Dpackage=person.liuxx.project
 ---
 ## base-web
 基本JAVA-WEB项目，JDK使用1.8版本<br>
