@@ -31,7 +31,7 @@ public class Item
 
 	public String getItem()
 	{
-		return product;
+		return item;
 	}
 
 	public void setItem(String item)

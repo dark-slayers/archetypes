@@ -1,9 +1,9 @@
 package ${package}.service;
 
-@Service("mrpService")
+@Service("aService")
 @Scope("prototype")
-public class Service
+public class AService
 {
 	@Autowired
-	private Dao dao;	
+	private Dao dao;
 }
