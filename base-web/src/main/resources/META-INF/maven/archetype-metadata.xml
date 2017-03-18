@@ -2,41 +2,41 @@
 <archetype-descriptor name="sample">
   <fileSets>
     <fileSet filtered="true" packaged="true">
-	  <directory>src/main/java</directory>
-	  <includes>
-	    <include>**/*.java</include>
-	  </includes>
-	</fileSet>
-	<fileSet filtered="true" packaged="true">
-	  <directory>src/test/java</directory>
-	  <includes>
-	    <include>**/*.java</include>
-	  </includes>
-	</fileSet>
-	<fileSet filtered="true" packaged="false">
-	  <directory>src/main/resources</directory>
-	  <includes>
-	    <include>**/*.xml</include>
-	  </includes>
-	</fileSet>
-	<fileSet filtered="true" packaged="false">
-	  <directory>src/main/webapp</directory>
-	  <includes>
-	    <include>**/*.*</include>
-	  </includes>
-	</fileSet>
-	<fileSet filtered="true" packaged="false">
-	  <directory>src/main/webapp/WEB-INF</directory>
-	  <includes>
-	    <include>web.xml</include>
-	  </includes>
-	</fileSet>
-	<fileSet filtered="false" packaged="false">
-	  <directory></directory>
-	  <includes>
-	    <include>.gitignore</include>
-		<include>README.md</include>
-	  </includes>
-	</fileSet>
+      <directory>src/main/java</directory>
+      <includes>
+        <include>**/*.java</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" packaged="true">
+      <directory>src/test/java</directory>
+      <includes>
+        <include>**/*.java</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" packaged="false">
+      <directory>src/main/resources</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" packaged="false">
+      <directory>src/main/webapp</directory>
+      <includes>
+        <include>**/*.*</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" packaged="false">
+      <directory>src/main/webapp/WEB-INF</directory>
+      <includes>
+        <include>web.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="false" packaged="false">
+      <directory></directory>
+      <includes>
+        <include>.gitignore</include>
+        <include>README.md</include>
+      </includes>
+    </fileSet>
   </fileSets>
 </archetype-descriptor>
