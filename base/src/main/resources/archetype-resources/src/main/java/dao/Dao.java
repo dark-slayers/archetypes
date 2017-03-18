@@ -1,6 +1,9 @@
 package ${package}.dao;
 
-public class Dao extends BaseDao<Item>
+import ${package}.vo.Item;
+import person.liuxx.util.hibernate.BaseDao;
+
+public interface Dao extends BaseDao<Item>
 {
 
 }
