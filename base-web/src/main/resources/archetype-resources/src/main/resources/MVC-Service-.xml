@@ -54,5 +54,6 @@
 			name="suffix"
 			value=".jsp" />
 	</bean>
-	<bean class="${package}.controller.AjaxController" />
+	<context:annotation-config />
+	<context:component-scan base-package="${package}.controller" />
 </beans>

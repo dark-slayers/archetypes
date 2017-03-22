@@ -9,7 +9,10 @@ var config = {
     filename: "[name].bundle.js",
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' })
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: '/packpage/vendor.bundle.js'
+    })
   ],
   module: {
     loaders: [{
@@ -17,12 +20,12 @@ var config = {
       exclude: /node_modules/,
       loader: 'babel-loader',
       query: {
-        presets: ['es2015','stage-0', 'react'],
+        presets: ['es2015', 'stage-0', 'react'],
       }
     }, {
-       test: /\.css$/,
-       loader: "style-loader!css-loader"
-     }]
+      test: /\.css$/,
+      loader: "style-loader!css-loader"
+    }]
   }
 }
 module.exports = config;
