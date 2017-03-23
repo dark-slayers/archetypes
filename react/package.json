@@ -14,7 +14,7 @@
   },
   "name": "mrp-util",
   "version": "1.0.0",
-  "description": "MRP工具",
+  "description": "项目名称",
   "main": "index.js",
   "dependencies": {
     "babel-core": "^6.11.4",

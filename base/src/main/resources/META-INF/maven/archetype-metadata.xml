@@ -19,13 +19,12 @@
         <include>**/*.xml</include>
       </includes>
     </fileSet>
+    <fileSet filtered="false" packaged="false">
+      <directory></directory>
+      <includes>
+        <include>.gitignore</include>
+        <include>README.md</include>
+      </includes>
+    </fileSet>
   </fileSets>
-  <fileSet filtered="false" packaged="false">
-    <directory></directory>
-    <includes>
-      <include>.gitignore</include>
-      <include>README.md</include>
-    </includes>
-  </fileSet>
-</fileSets>
 </archetype-descriptor>
