@@ -1,9 +1,10 @@
 var webpack = require("webpack");
 var path = require('path');
+const isDebug = true;
 var config = {
   entry: {
     vendor: ["jquery", "react", 'react-dom'],
-    "/packpage/debug": "./src/entry/debug.entry.js",
+    "/target/test": "./src/entry/test.entry.js",
   },
   output: {
     path: path.resolve(__dirname, './'),
@@ -12,20 +13,41 @@ var config = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: "/packpage/vendor.bundle.js"
+      filename: "/target/vendor.bundle.js"
     })
   ],
   module: {
-    loaders: [{
+    rules: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['es2015', 'stage-0', 'react']
-      }
+      use: [{
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: isDebug,
+          presets: [
+            ['es2015', {
+              modules: false
+            }],
+            ['stage-0'],
+            ['react']
+          ],
+          plugins: ['syntax-dynamic-import']
+        }
+      }]
     }, {
       test: /\.css$/,
-      use: [ 'style-loader', 'css-loader' ]
+      use: [{
+          loader: 'style-loader',
+          options: {
+            cacheDirectory: isDebug,
+          }
+        },{
+            loader: 'css-loader',
+            options: {
+              cacheDirectory: isDebug,
+            }
+          }
+      ]
     }]
   }
 }
