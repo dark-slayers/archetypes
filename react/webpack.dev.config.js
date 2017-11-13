@@ -1,5 +1,5 @@
 var webpack = require("webpack");
 var path = require('path');
 var config = require('./webpack.base.config.js');
-config.module.rules[0].use[0].options.plugins.push('transform-remove-console');
+config.entry["/target/test"]="./src/entry/test.entry.js";
 module.exports = config;
