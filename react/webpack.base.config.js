@@ -1,18 +1,23 @@
 var webpack = require("webpack");
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 var config = {
   entry: {
-    vendor: ["jquery", "react", 'react-dom'],
-    //"/target/a": "./src/entry/a.entry.js",
+    vendor: ["react", 'react-dom'],
   },
   output: {
-    path: path.resolve(__dirname, './'),
-    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, './target'),
+    filename: "[name].[chunkhash:4].bundle.js"
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: "/target/vendor.bundle.js"
+      filename: "vendor.[chunkhash:4].bundle.js"
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime',
+      filename: "runtime.[chunkhash:4].bundle.js"
     })
   ],
   module: {
@@ -26,7 +31,7 @@ var config = {
             ['env', {
               modules: false,
               "targets": {
-                "browsers": ["Chrome >= 60"]
+                "browsers": ["Chrome >= 60", "Firefox >= 55"]
               }
             }],
             ['stage-0'],
@@ -45,4 +50,16 @@ var config = {
     }]
   }
 }
+const entrys={'search_express':'快递单查询', 'accept':'快递接收'};
+const list = Object.keys(entrys);
+for(let key of list){
+  config.entry[key]="./src/entry/"+key+".entry.js",
+  config.plugins.push(new HtmlWebpackPlugin({
+      title: entrys[key],
+      filename: key+'.html',
+      template: './src/template.html',
+      chunks: ['vendor','runtime',key]
+    }));
+}
+
 module.exports = config;
