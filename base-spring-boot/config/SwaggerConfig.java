@@ -27,15 +27,15 @@ public class SwaggerConfig
     {
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.hyc.it.project.plan.controller"))
+                .apis(RequestHandlerSelectors.basePackage("${packagePath}.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
     private ApiInfo apiInfo()
     {
-        return new ApiInfoBuilder().title("Project Plan Service APIs")
-                .description("Project Plan Service ：http://localhost:8080/")
+        return new ApiInfoBuilder().title("${projectName} Service APIs")
+                .description("${projectName} Service ：http://localhost:8080/")
                 .termsOfServiceUrl("http://blog.didispace.com/")
                 .contact(new Contact("aa", "aa.aa.com", "aa@aa.com"))
                 .version("1.0")
