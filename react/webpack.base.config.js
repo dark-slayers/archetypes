@@ -31,7 +31,7 @@ var config = {
             ['env', {
               modules: false,
               "targets": {
-                "browsers": ["Chrome >= 60", "Firefox >= 55"]
+                "browsers": ["Chrome >= 60", "Firefox >= 55","ie >= 9"]
               }
             }],
             ['stage-0'],
@@ -46,6 +46,11 @@ var config = {
         loader: 'style-loader',
       }, {
         loader: 'css-loader',
+      }]
+    }, {
+      test: /\.(png|jpg|gif)$/,
+      use: [{
+        loader: 'url-loader?limit=200000',
       }]
     }]
   }
